@@ -1,0 +1,3 @@
+include setup.py
+
+recursive-include password_rba_horizon *.js *.html *.scss
