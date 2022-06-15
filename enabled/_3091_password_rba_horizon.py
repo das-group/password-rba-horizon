@@ -44,6 +44,8 @@ if not DISABLED:
         settings.AUTHENTICATION_URLS.remove(
             'openstack_auth.urls'
         )
+    except ValueError:
+        pass
     finally:
         settings.AUTHENTICATION_URLS.append(
         'password_rba_horizon.urls',
