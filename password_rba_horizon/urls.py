@@ -18,3 +18,4 @@ from password_rba_horizon.forms import Login
 
 
 views.forms.Login = Login
+urlpatterns = []
