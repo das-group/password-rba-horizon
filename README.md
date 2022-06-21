@@ -48,7 +48,7 @@ Start the asynchronous web server e.g.:
 
 or via tox:
 
-    tox -e runserver --0:8000
+    tox -e runserver -- 0:8000
 
 The dashboard should now be running to get visited with the web browser.
 

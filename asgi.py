@@ -30,7 +30,8 @@ sys.path.insert(0, os.path.normpath(os.path.join(
     os.path.dirname(os.path.realpath(__file__)), '..')))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'openstack_dashboard.settings'
 sys.stdout = sys.stderr
-settings.configure()
+if not settings.configured:
+    settings.configure()
 
 from asgiref.wsgi import WsgiToAsgi
 from channels.auth import AuthMiddlewareStack
