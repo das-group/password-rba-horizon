@@ -40,24 +40,13 @@ if not DISABLED:
             'password_rba_horizon.plugin.RBAPasswordPlugin',
         )
     # Changes the used login form instead of overriding the login path.
-    try:
-        settings.AUTHENTICATION_URLS.remove(
-            'openstack_auth.urls'
-        )
-    except ValueError:
-        pass
-    finally:
-        settings.AUTHENTICATION_URLS.append(
-        'password_rba_horizon.urls',
-    )
+    settings.AUTHENTICATION_URLS.append('password_rba_horizon.urls')
 
-
-# ASGI_APPLICATION = 'openstack_dashboard.asgi.application'
 
 AUTO_DISCOVER_STATIC_FILES = True
 
 # Send email to the console by default
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Or send them to /dev/null
 #EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'

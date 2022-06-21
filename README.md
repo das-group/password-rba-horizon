@@ -46,9 +46,15 @@ Start the asynchronous web server e.g.:
     
     daphne -b 0.0.0.0 -p 8000 openstack_dashboard.asgi:application
 
-or via tox:
+or via Horizons tox:
 
     tox -e runserver -- 0:8000
+
+Note, that Horizon's tox testserver will require enabled sitepackages to use the installed plugin in the sitepackages. Therefore add the following attribute into the `[testenv]` section in Horizon's `tox.ini` file. 
+    
+    [testenv]
+    sitepackages = True
+    ...
 
 The dashboard should now be running to get visited with the web browser.
 

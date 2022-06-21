@@ -13,10 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from openstack_auth import urls
 from openstack_auth import views
 from password_rba_horizon.forms import Login
 
 
 views.forms.Login = Login
-urlpatterns = urls.urlpatterns
